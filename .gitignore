@@ -1,0 +1,18 @@
+# nuScenes data + downloaded artifacts — not redistributable per the nuScenes
+# license, and far too large for git (~15 GB). See README for how to fetch.
+data/
+
+# generated outputs (renders, eval results)
+outputs/
+
+# third-party clones (nuscenes-devkit reference checkout)
+third_party/
+
+# python / jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# macOS / editor / local tooling
+.DS_Store
+.claude/
