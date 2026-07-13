@@ -9,7 +9,7 @@ The core autonomy components are **written from scratch** as a learning exercise
 ## Status
 
 - ✅ **P0 — Environment + data checkpoint:** Apple Silicon env (Python 3.12, PyTorch w/ MPS), nuScenes-mini + trainval metadata loaded, official tracking eval verified, all published detection files (CenterPoint / MEGVII / PointPillars / Mapillary) archived and split-verified.
-- ⏳ **P1 — 3D geometry & coordinate frames** (next): hand-written sensor→ego→global transforms, multi-sweep lidar accumulation.
+- 🔨 **P1 — 3D geometry & coordinate frames** (in progress): hand-written sensor→ego→global transforms, multi-sweep lidar accumulation. Spec: `src/geometry.py` + `src/nuscenes_frames.py` stubs, gated by `tests/`.
 
 ## Data
 
