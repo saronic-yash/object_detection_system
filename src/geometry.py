@@ -34,6 +34,27 @@ def quat_to_rot(q: np.ndarray) -> np.ndarray:
     Tests: must match pyquaternion's .rotation_matrix; output must be
     orthonormal with det = +1.
     """
+    w = q[0]
+    x = q[1]
+    y = q[2]
+    z = q[3]
+    # R = np.zeros((3,4), dtype = int)
+    # R[0][0] = 1-2*int(((y*y)+(z*z)))
+    # R[0][1] = 2*int(((x*y) + (w*z)))
+    # R[0][2] = 2*int(((x*z) - (w*y)))
+    # R[1][0] = 2*int(((x*y)-(w*z)))
+    # R[1][1] = 1-2*int(((x*x)+(z*z)))
+    # R[1][2] = 2*int(((y*z)+(w*x)))
+    # R[2][0] = 2*int(((w*z)+(w*y)))
+    # R[2][1] = 2*int(((y*z)-(w*x)))
+    # R[2][2] = 1-2*int(((x*x)+(y*y)))
+    return np.array([
+    [1 - 2*(y*y + z*z),  2*(x*y-w*z),       2*(x*z + w*y)],
+    [2*(x*y+w*z),        1 - 2*(x*x + z*z), 2*(y*z-w*x)],
+    [2*(x*z-w*y),        2*(y*z+w*x),       1 - 2*(x*x + y*y)],
+])
+
+
     raise NotImplementedError("P1: write me by hand")
 
 
